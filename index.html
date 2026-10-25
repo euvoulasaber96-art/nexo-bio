@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Nexo.bio - Seu link na bio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body {
+            background: #050505;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-image: radial-gradient(circle at 50% 10%, rgba(255,0,85,0.15) 0%, transparent 40%);
+        }
+        .container { text-align: center; max-width: 500px; padding: 40px; }
+        h1 { font-size: 48px; font-weight: 800; margin-bottom: 15px; }
+        h1 span { color: #ff0055; text-shadow: 0 0 20px rgba(255,0,85,0.5); }
+        p { color: #a1a1aa; font-size: 18px; margin-bottom: 40px; }
+        .box {
+            background: #121216;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #333;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+        input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: #050505;
+            border: 1px solid #333;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+        }
+        input:focus { border-color: #ff0055; }
+        button {
+            width: 100%;
+            padding: 15px;
+            background: #ff0055;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover { background: #cc0044; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(255,0,85,0.3); }
+        .divider { margin: 20px 0; color: #52525b; font-size: 14px; }
+        .link-login { color: #a1a1aa; text-decoration: none; font-size: 14px; }
+        .link-login:hover { color: #ff0055; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nexo<span>.bio</span></h1>
+        <p>Seus links, sua identidade. Crie sua página em segundos.</p>
+        
+        <div class="box">
+            <form action="/criar" method="POST">
+                <input type="text" name="username" placeholder="Escolha seu @username" required>
+                <input type="password" name="password" placeholder="Crie uma senha" required>
+                <button type="submit">Criar Página</button>
+            </form>
+            
+            <div class="divider">Já tem uma conta?</div>
+            
+            <form action="/login" method="POST" style="display: flex; gap: 10px;">
+                <input type="text" name="username" placeholder="Username" required style="margin-bottom: 0;">
+                <input type="password" name="password" placeholder="Senha" required style="margin-bottom: 0;">
+                <button type="submit" style="width: auto; padding: 15px 25px; font-size: 16px;">Entrar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
